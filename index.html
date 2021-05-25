@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='style.css' rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <main class='mainContent'>    
+        <h1 class='title'>Rock Paper Robots</h1>
+        <div class ='playerChoice'>
+        <button class='rock'>Rock</button>
+        <button class='paper'>Paper</button>
+        <button class='scissors'>Scissors</button>
+        </div>   
+        <div class='game'>
+            <p class="playerPick">Player picks:</p>
+            <p class='computerPick'>Robot picks:</p>
+            <p class='pPicked'></p>
+            <p class='cPicked'></p>
+        </div>    
+        <div class='winCounter'>
+            <p class='playerWins'>Win Counter: 0</p>
+            <p class='computerWins'>Win Counter: 0</p>
+        </div>
+        <p class="winner"></p>
+        <button class='reset' onclick="resetButton()">Reset</button>
+    </main>
+
+    <div class='startScreen'>
+        <h1 class='startItem'>Rock Paper & Robots</h1>
+        <div class='startItem'>
+            <button class='playGameButton'>Play Game</button>
+        </button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
