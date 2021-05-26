@@ -19,6 +19,7 @@ const playerWins = document.querySelector('.playerWins');
 const reset = document.querySelector('.reset');
 const playGameButton = document.querySelector('.playGameButton');
 const startScreen = document.querySelector('.startScreen');
+const startItemTop = document.querySelector('.top');
 
 let playerWinCounter = 0;
 let computerWinCounter = 0;
@@ -47,6 +48,23 @@ function resetButton(){
     winAmount(playerWins, playerWinCounter);
 }
 
+function checkForWin(){
+    if (playerWinCounter === 10) {
+        console.log('Player Won');
+        startItemTop.innerHTML = "Humanity Wins";
+        playGameButton.innerHTML = "Play Again?";
+        startScreen.classList.remove('invisible');           
+        resetButton();
+    }
+
+    else if (computerWinCounter === 10){
+        console.log('Computer Won');
+        startItemTop.innerHTML = "Game Over. The Robots have won."
+        playGameButton.innerHTML = "Play Again?";
+        startScreen.classList.remove('invisible');
+        resetButton();
+    }
+}
 //----------------------------------------------------------------------
 // Game Logic
 
@@ -66,8 +84,8 @@ rock.addEventListener("click", function(){
         winner.innerHTML = "Player Wins";
         playerWinCounter += 1;
         winAmount(playerWins, playerWinCounter);
-    }
-
+        }
+    checkForWin();    
 });
 
 paper.addEventListener("click", function(){
@@ -87,6 +105,7 @@ paper.addEventListener("click", function(){
         playerWinCounter += 1;
         winAmount(playerWins, playerWinCounter);
     }
+    checkForWin();
 });
 
 scissors.addEventListener("click", function(){
@@ -106,6 +125,7 @@ scissors.addEventListener("click", function(){
         playerWinCounter += 1;
         winAmount(playerWins, playerWinCounter);
     }
+    checkForWin();
 });
 
 playGameButton.addEventListener('click', function(){
