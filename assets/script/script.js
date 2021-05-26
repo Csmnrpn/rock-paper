@@ -20,6 +20,7 @@ const reset = document.querySelector('.reset');
 const playGameButton = document.querySelector('.playGameButton');
 const startScreen = document.querySelector('.startScreen');
 const startItemTop = document.querySelector('.top');
+const storyContent = document.querySelector('.storyContent');
 
 let playerWinCounter = 0;
 let computerWinCounter = 0;
@@ -35,6 +36,13 @@ function computerChoice() {
 }
 
 function winAmount(whoWon, winCounter) {
+    if (winCounter > 7 ){
+        whoWon.classList.add('red');
+    }
+    else if (winCounter > 4){
+        whoWon.classList.add('orange');
+    }
+
     whoWon.innerHTML = `Win counter ${winCounter}`;
 }
 
@@ -44,6 +52,8 @@ function resetButton(){
     playerWinCounter = 0;
     computerWinCounter = 0;
     winner.innerHTML = '';
+    playerWins.classList.remove('red','orange');
+    computerWins.classList.remove('red','orange');
     winAmount(computerWins, computerWinCounter);
     winAmount(playerWins, playerWinCounter);
 }
@@ -95,7 +105,7 @@ paper.addEventListener("click", function(){
     if (pick === "Paper") {
         winner.innerHTML = 'Nobody Wins';
     }
-    else if (pick === "Rock"){
+    else if (pick === "Scissors"){
         winner.innerHTML = "Robot Wins";
         computerWinCounter += 1;
         winAmount(computerWins, computerWinCounter);
@@ -130,4 +140,5 @@ scissors.addEventListener("click", function(){
 
 playGameButton.addEventListener('click', function(){
     startScreen.classList.add('invisible');
+    storyContent.classList.add('invisible');
 })

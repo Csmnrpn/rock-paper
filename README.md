@@ -1,2 +1,2 @@
 # rock-paper
-basic rock paper scissors
+My take on a clasic rock-paper-scissors

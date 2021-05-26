@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'CaviarBold';
+    src: url('Caviar_Dreams_Bold-webfont.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fca311;
+    background-color: #000000;
+}
+
+
+body {
+    font-family:'CaviarBold', sans-serif;
+    font-size: 18px;
+    line-height: 1.8em;
+}
+
+button {
+    font-family:inherit;
+    font-size: inherit;
+    border: none;
+    margin: 10px;
+    border: 1px solid #14213d;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #14213d;
+    cursor: pointer;
+    max-height: 40px;
+}
+
+button:hover {
+    background-color: #e5e5e5cb;
+}
+
+button:active {
+    background-color: #fff;
+}
+
+.mainContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25vh;
+}
+
+.robot {
+    color:red;
+}
+
+.game,
+.winCounter {
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.game p,
+.winCounter p {
+    width: 49.5%;
+    text-align: center;
+    min-width: 189px;
+    height: 40px;
+}
+
+.winner {
+    min-width: 189px;
+    width: 99%;
+    height:19px;
+    margin:5px;
+    text-align: center;
+}
+
+.startScreen {
+    display:flex;
+    height: 100vh;
+    width: 100%;
+    padding: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    flex-wrap: wrap;
+}
+
+.startItem {
+    height: 50vh;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.topItem {
+    align-items: flex-end;
+}
+
+.storyContent {
+    width: 80%;
+    margin: 20px;
+    padding: 5px;
+    border-bottom: 2px solid #fff;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.playGameButton {
+    margin-top: 30px;
+}
+
+.top {
+    width: 51vw;
+    text-align: center;
+}
+
+.invisible {
+    display:none;
+}
+
+.orange {
+    color:rgb(255, 123, 0);
+    font-size: 1.1em;
+}
+
+.red {
+    color:red;
+    font-size: 1.3em;
+}
+
+.playerChoice {
+    display:flex;
+    width: 40vw;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 980px) {
+    .storyContent {
+        max-width: 980px;
+    }
+}
