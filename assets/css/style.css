@@ -144,6 +144,17 @@ button:active {
     justify-content: space-evenly;
 }
 
+.credits {
+    display:flex;
+    justify-content: center;
+    margin-top: 15rem;
+}
+
+a {
+    margin-left: 20px;
+    color:black;
+}
+
 @media only screen and (min-width: 980px) {
     .storyContent {
         max-width: 980px;
