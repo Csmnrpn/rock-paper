@@ -1,8 +1,3 @@
-// implement reset button
-// implement start screen 
-// implement Game Over / Game Won
-// implement Play Again
-
 //-------------------------------------------------------------------
 // DOM Selectors
 
@@ -36,38 +31,35 @@ function computerChoice() {
 }
 
 function winAmount(whoWon, winCounter) {
-    if (winCounter > 7 ){
+    if (winCounter > 7) {
         whoWon.classList.add('red');
-    }
-    else if (winCounter > 4){
+    } else if (winCounter > 4) {
         whoWon.classList.add('orange');
     }
 
     whoWon.innerHTML = `Win counter ${winCounter}`;
 }
 
-function resetButton(){
+function resetButton() {
     pPicked.innerHTML = '';
     cPicked.innerHTML = '';
     playerWinCounter = 0;
     computerWinCounter = 0;
     winner.innerHTML = '';
-    playerWins.classList.remove('red','orange');
-    computerWins.classList.remove('red','orange');
+    playerWins.classList.remove('red', 'orange');
+    computerWins.classList.remove('red', 'orange');
     winAmount(computerWins, computerWinCounter);
     winAmount(playerWins, playerWinCounter);
 }
 
-function checkForWin(){
+function checkForWin() {
     if (playerWinCounter === 10) {
         console.log('Player Won');
         startItemTop.innerHTML = "Humanity Wins";
         playGameButton.innerHTML = "Play Again?";
-        startScreen.classList.remove('invisible');           
+        startScreen.classList.remove('invisible');
         resetButton();
-    }
-
-    else if (computerWinCounter === 10){
+    } else if (computerWinCounter === 10) {
         console.log('Computer Won');
         startItemTop.innerHTML = "Game Over. The Robots have won."
         playGameButton.innerHTML = "Play Again?";
@@ -78,39 +70,35 @@ function checkForWin(){
 //----------------------------------------------------------------------
 // Game Logic
 
-rock.addEventListener("click", function(){
+rock.addEventListener("click", function () {
     pPicked.innerHTML = `${rock.innerHTML}`;
     let pick = computerChoice();
     cPicked.innerHTML = `${pick}`;
     if (pick === rock.innerHTML) {
         winner.innerHTML = 'Nobody Wins';
-    }
-    else if (pick === "Paper"){
+    } else if (pick === "Paper") {
         winner.innerHTML = "Robot Wins";
         computerWinCounter += 1;
         winAmount(computerWins, computerWinCounter);
-    }
-    else {
+    } else {
         winner.innerHTML = "Player Wins";
         playerWinCounter += 1;
         winAmount(playerWins, playerWinCounter);
-        }
-    checkForWin();    
+    }
+    checkForWin();
 });
 
-paper.addEventListener("click", function(){
+paper.addEventListener("click", function () {
     pPicked.innerHTML = `${paper.innerHTML}`;
     let pick = computerChoice();
     cPicked.innerHTML = `${pick}`;
     if (pick === "Paper") {
         winner.innerHTML = 'Nobody Wins';
-    }
-    else if (pick === "Scissors"){
+    } else if (pick === "Scissors") {
         winner.innerHTML = "Robot Wins";
         computerWinCounter += 1;
         winAmount(computerWins, computerWinCounter);
-    }
-    else {
+    } else {
         winner.innerHTML = "Player Wins";
         playerWinCounter += 1;
         winAmount(playerWins, playerWinCounter);
@@ -118,19 +106,17 @@ paper.addEventListener("click", function(){
     checkForWin();
 });
 
-scissors.addEventListener("click", function(){
+scissors.addEventListener("click", function () {
     pPicked.innerHTML = `${scissors.innerHTML}`;
     let pick = computerChoice();
     cPicked.innerHTML = `${pick}`;
     if (pick === "Scissors") {
         winner.innerHTML = 'Nobody Wins';
-    }
-    else if (pick === "Rock"){
+    } else if (pick === "Rock") {
         winner.innerHTML = "Robot Wins";
         computerWinCounter += 1;
         winAmount(computerWins, computerWinCounter);
-    }
-    else {
+    } else {
         winner.innerHTML = "Player Wins";
         playerWinCounter += 1;
         winAmount(playerWins, playerWinCounter);
@@ -138,7 +124,7 @@ scissors.addEventListener("click", function(){
     checkForWin();
 });
 
-playGameButton.addEventListener('click', function(){
+playGameButton.addEventListener('click', function () {
     startScreen.classList.add('invisible');
     storyContent.classList.add('invisible');
 })
